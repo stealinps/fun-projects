@@ -10,7 +10,7 @@ void display(int arr<::>,int sizes)<%
 %>
 
 void shuffle(int arr<::>,int sizes)<%
-	for(int i=0;i<10;i++)<%
+	for(int i=0;i<std::rand()%11;i++)<%
 	int n=std::rand()%sizes;
 	int m=std::rand()%sizes;
 	int temp=arr<:n:>;
@@ -31,9 +31,9 @@ int main()<%
 	bool sorted=false;
 	int swap=0;
 	while(!sorted)<%
+		shuffle(arr,sizes);
 		std::cout<<"Sort Attempt:"<<swap;
 		swap++;
-		shuffle(arr,sizes);
 		display(arr,sizes);
 		sorted=check(arr,sizes);
 		
